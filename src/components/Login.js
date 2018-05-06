@@ -71,7 +71,7 @@ class Login extends Component{
                     Login
                 </button>
             </form>
-            <small><a href="#" className="half-white" onClick={this.handleCreateAccountAction}>Dont have an account? <i className="fas fa-question-circle" /></a></small>
+            <button className="half-white transparent-background create-account-button siimple-btn" onClick={this.handleCreateAccountAction}><small>Dont have an account? <i className="fas fa-question-circle" /></small></button>
         </div>)
     }
 }

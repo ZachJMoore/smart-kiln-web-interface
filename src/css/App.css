@@ -52,6 +52,9 @@
 .half-black-background{
   background-color: var(--transparent-black);
 }
+.transparent-background{
+  background-color: #0000;
+}
 .app {
   min-width: 100%;
   min-height: 100vh;
@@ -96,7 +99,7 @@
 .login-page{
   height: 75vh;
 }
-.login-page small{
+.login-page .create-account-button{
   position: fixed;
   bottom: 10px;
   left: center;
