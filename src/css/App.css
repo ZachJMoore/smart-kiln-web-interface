@@ -83,13 +83,13 @@
 .raised-module-light{
   background-color: var(--main-light-shade);
   box-shadow: var(--box-shadow);
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 .raised-module-dark{
   background-color: var(--main-dark-shade);
   box-shadow: var(--box-shadow);
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 
@@ -229,6 +229,12 @@ main {
 }
 main:empty::before{
   content: "Hmmmm... Nothing is here.";
+  position: absolute;
+  width: 200px;
+  height: 20px;
+  top: calc(50% - 10px);
+  left: calc(50% - 100px);
+  text-align: center;
   color: var(--transparent-white)
 }
 .view-header{
@@ -260,12 +266,50 @@ main:empty::before{
   width: 100%;
 }
 
-.dashboard-stats-container{
-  padding: 10px;
+.dashboard-status-container{
   margin: 10px;
-  width: calc(100% - 40px);
-  height: 350px;
+  width: calc(100% - 20px);
   background-color: var(--transparent-white);
+}
+.dashboard-status-container-title{
+  padding: 15px 10px;
+  font-size: 20px;
+  color: var(--main-light-shade);
+}
+.dashboard-status-item-container{
+  border-top: 2px solid var(--main-dark-shade);
+  padding: 15px 0px;
+}
+.dashboard-status-item-container > section{
+  margin: 2.5px 0;
+}
+.dashboard-status-text{
+  margin: 0 10px;
+  color: var(--main-light-shade)
+}
+.dashboard-status-title{
+
+}
+.dashboard-status-temp{
+
+}
+.dashboard-status-on-off{
+
+}
+.dashboard-status-current-schedule{
+
+}
+.dashboard-status-progress-percent{
+
+}
+
+
+.dashboard-status-progress-bar{
+  flex: 1;
+  margin: 5px 0;
+  border-radius: 1000px;
+  align-self: flex-start;
+  height: 16px;
 }
 
 .dashboard-kilns-container{
