@@ -7,6 +7,7 @@
 
 // To learn more about the benefits of this model, read https://goo.gl/KwvDNy.
 // This link also includes instructions on opting out of this behavior.
+import swal from "sweetalert"
 
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost' ||
@@ -66,6 +67,15 @@ function registerValidSW(swUrl) {
               // It's the perfect time to display a "New content is
               // available; please refresh." message in your web app.
               console.log('New content is available; please refresh.');
+              swal({
+                title: "An Update is Available",
+                text: "Would you like to update now?"
+              })
+              .then((willUpdate) => {
+                if (willUpdate) {
+                  window.location.reload();
+                }
+              });
             } else {
               // At this point, everything has been precached.
               // It's the perfect time to display a
