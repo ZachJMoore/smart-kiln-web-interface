@@ -3,7 +3,7 @@ import { KilnStatus } from "./KilnStatus";
 
 let placeholder = {
     metadata: {
-        name: "Uno"
+        name: "Uno (PH)"
     },
     temp: "82",
     isFiring: true,
@@ -12,7 +12,7 @@ let placeholder = {
 }
 let placeholder2 = {
     metadata: {
-        name: "Duo"
+        name: "Duo (PH)"
     },
     temp: "1230",
     isFiring: true,
@@ -21,7 +21,7 @@ let placeholder2 = {
 }
 let placeholder3 = {
     metadata: {
-        name: "Trio"
+        name: "Spark (PH)"
     },
     temp: "72",
     isFiring: true,
