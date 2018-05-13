@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as firebaseAuth from "../firebase/firebaseAuth"
 import userDB from "../firebase/firebaseDB"
+import { Link } from "react-router-dom"
 
 class Navigation extends Component{
     constructor(props){
@@ -33,7 +34,10 @@ class Navigation extends Component{
                         <small className="half-black">{this.props.authUser.email}</small>
                     </section>
                 </section>
-                <section className="nav-links-container flex-container-center">
+                <section className="nav-links-container flex-container column ai-center">
+                    <Link to="/" className="nav-link">
+                        Dashboard
+                    </Link>
                 </section>
                 <section className="nav-log-out-container">
                     <button className="siimple-btn half-black" onClick={firebaseAuth.signOutUser} style={{backgroundColor: "#fff0"}}>Log out</button>
