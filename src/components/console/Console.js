@@ -91,6 +91,14 @@ class Console extends Component{
                 <Route exact path="/" render={()=>{
                     return (<Dashboard kilns={this.state.kilns} />)
                 }}/>
+                <Route exact path="/placeholder" render={()=>{
+                    return <span className="half-white center-snippet">Looks like you found a placeholder link</span>
+                }}/>
+                {this.state.kilns.map((kiln, index)=>{
+                    return (<Route key={index} exact path={`/${kiln.metadata.uuid.slice(0,8)}`} render={()=>{
+                        return <span  className="half-white center-snippet">{kiln.metadata.name}</span>
+                    }}/>)
+                })}
             </main>
         </div>)
     }
