@@ -92,7 +92,19 @@
   border-radius: 4px;
 }
 
+.center-snippet {
+  position: absolute;
+  width: 200px;
+  height: 20px;
+  top: calc(50% - 10px);
+  left: calc(50% - 100px);
+  text-align: center;
+  color: var(--transparent-white)
+}
 
+.decoration-none{
+  text-decoration: none;
+}
 
 /* Login page */
 
@@ -193,14 +205,33 @@ transition: .3s
 }
 .nav-user-container img {
   display: inline-block;
-  width: 40%;
+  width: 35%;
   border-radius: 50%;
 }
 
 .nav-links-container{
-  height: calc(100% - 152px);
+  height: calc(100% - 182px);
+  padding: 15px 0;
   align-self: stretch;
   overflow: auto;
+}
+.nav-link{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background-color: #0000;
+  color: var(--main-dark-shade);
+  border-radius: 4px;
+  height: 35px;
+  align-self: stretch;
+  font-size: 18px;
+  text-align: center;
+  transition: color .2s, background-color .2s
+}
+.nav-link:hover{
+  background-color: var(--main-dark-shade);
+  color: var(--main-light-shade);
 }
 .nav-links-container:empty::before{
   content: "Looks like you dont have any links";
@@ -279,6 +310,10 @@ main:empty::before{
 .dashboard-status-item-container{
   border-top: 2px solid var(--main-dark-shade);
   padding: 15px 0px;
+  transition: transform .2s, box-shadow .2s
+}
+.dashboard-status-item-container:hover{
+  transform: translateY(-5px);
 }
 .dashboard-status-item-container > section{
   margin: 2.5px 0;
