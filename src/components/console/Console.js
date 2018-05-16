@@ -4,6 +4,7 @@ import { Route } from "react-router-dom";
 import Navigation from "../Navigation"
 import userDB from "../../firebase/firebaseDB";
 import Dashboard from "../dashboard/Dashboard";
+import KilnConsole from "../kiln/KilnConsole";
 
 class Console extends Component{
     constructor(props){
@@ -96,7 +97,7 @@ class Console extends Component{
                 }}/>
                 {this.state.kilns.map((kiln, index)=>{
                     return (<Route key={index} exact path={`/${kiln.metadata.uuid.slice(0,8)}`} render={()=>{
-                        return <span  className="half-white center-snippet">{kiln.metadata.name}</span>
+                        return <KilnConsole kiln={kiln} />
                     }}/>)
                 })}
             </main>

@@ -355,6 +355,11 @@ main:empty::before{
 }
 
 
+/* Kiln Console */
+
+.kiln-console-container{
+  align-self: stretch;
+}
 
 
 
