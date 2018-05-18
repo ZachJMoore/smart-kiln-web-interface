@@ -96,7 +96,7 @@ class Console extends Component{
                     return <span className="half-white center-snippet">Looks like you found a placeholder link</span>
                 }}/>
                 {this.state.kilns.map((kiln, index)=>{
-                    return (<Route key={index} exact path={`/${kiln.metadata.uuid.slice(0,8)}`} render={()=>{
+                    return (<Route key={index} path={`/${kiln.metadata.uuid.slice(0,8)}`} render={()=>{
                         return <KilnConsole kiln={kiln} />
                     }}/>)
                 })}
