@@ -361,8 +361,10 @@ main:empty::before{
   align-self: stretch;
 }
 
-
-
+/* Hour chart */
+.hour-chart-container{
+  align-self: stretch;
+}
 
 /* Responsive */
 
