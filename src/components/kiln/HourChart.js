@@ -29,7 +29,8 @@ class HourChart extends Component{
                     responsive: true,
                     tooltips: {
                         mode: "index",
-                        intersect: false
+                        intersect: false,
+                        displayColors: false
                     },
                     hover: {
                         mode: "nearest",
