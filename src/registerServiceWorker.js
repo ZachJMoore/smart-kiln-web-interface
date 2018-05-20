@@ -68,7 +68,7 @@ function registerValidSW(swUrl) {
               // available; please refresh." message in your web app.
               console.log('New content is available; please refresh.');
               swal({
-                title: "An Update is Available",
+                title: "Update is Available!",
                 text: "Would you like to update now?"
               })
               .then((willUpdate) => {
