@@ -3,12 +3,12 @@
     "short_name": "Smart Kiln",
     "icons": [
         {
-            "src": "/icons/android-chrome-192x192.png?v=PY4p44z0bE",
+            "src": "/static/android-chrome-192x192.png?v=XBzp3q2pkz",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/icons/android-chrome-512x512.png?v=PY4p44z0bE",
+            "src": "/static/android-chrome-512x512.png?v=XBzp3q2pkz",
             "sizes": "512x512",
             "type": "image/png"
         }
@@ -16,5 +16,6 @@
     "theme_color": "#2e283b",
     "background_color": "#2e283b",
     "start_url": "/",
-    "display": "standalone"
+    "display": "standalone",
+    "orientation": "portrait"
 }
