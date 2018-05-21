@@ -17,6 +17,9 @@ class HourChart extends Component{
                     }]
                 },
                 options: {
+                    animation: {
+                        duration: 0
+                    },
                     legend: {
                         display: false
                     },
@@ -49,6 +52,13 @@ class HourChart extends Component{
     }
 
     componentDidMount(){
+        let data = this.props.data.slice().reverse()
+        let label = data.map((temp, index)=>{
+            return `${((index*5)+5)}m`
+        }).reverse()
+        this.initChart(data, label)
+    }
+    componentDidUpdate(){
         let data = this.props.data.slice().reverse()
         let label = data.map((temp, index)=>{
             return `${((index*5)+5)}m`
