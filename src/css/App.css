@@ -1,5 +1,6 @@
+/* Dark Colors */
 :root{
-  --main-light-shade: #f0eeea;
+  --main-light-shade: #fcfcfc;
   --main-light-accent: #eecacb;
   --main-brand: #cb4340;
   --main-dark-accent: #762e41;
@@ -10,6 +11,19 @@
 
   --box-shadow: 2px 2px 8px 1px #0006;
 }
+/* Light Colors */
+/* :root{
+  --main-light-shade: #4e6c70;
+  --main-light-accent: #762e41;
+  --main-brand: #cb4340;
+  --main-dark-accent: #eecacb;
+  --main-dark-shade: #f9fffe;
+
+  --transparent-white:#fff5;
+  --transparent-black:#0005;
+
+  --box-shadow: 2px 2px 8px 1px #0003;
+} */
 .light-shade{
   color: var(--main-light-shade)
 }
@@ -179,9 +193,6 @@ transition: .3s
   position: fixed;
   top: -100px;
   left: -100px;
-}
-#navCheckbox:focus ~ .nav-button i {
-  color: var(--main-light-accent)
 }
 #navCheckbox:checked ~ .nav-button i{
   color: var(--main-dark-shade);
@@ -359,6 +370,17 @@ main:empty::before{
 
 .kiln-console-container{
   align-self: stretch;
+}
+.kiln-console-tab-container{
+  align-self: stretch;
+  padding: 5px 0;
+  margin: 10px;
+}
+
+.kiln-console-tab-item{
+  border-radius: 1000px;
+  padding: 2px 8px;
+  border: 2px solid var(--main-light-shade)
 }
 
 /* Hour chart */

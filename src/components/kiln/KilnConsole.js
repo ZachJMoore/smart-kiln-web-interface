@@ -6,13 +6,13 @@ class KilnConsole extends Component{
     render(){
         return (<div className="flex-container ai-center dashboard column">
         <section className="view-header">
-            <span className="light-shade">{this.props.kiln.metadata.name}</span>
+            <span className="light-shade">{this.props.kiln.metadata.name} | {this.props.kiln.temp}</span>
         </section>
         <section className="view-body flex-container ai-center column" >
-            <section className="siimple-tabs flex-container-center space-around">
-                <Link to={`${this.props.match.url}/recent`} className="siimple-tabs-tab light-shade decoration-none">Recent</Link>
-                <Link to={`${this.props.match.url}`} className="siimple-tabs-tab light-shade decoration-none">Overview</Link>
-                <Link to={`${this.props.match.url}/controls`} className="siimple-tabs-tab light-shade decoration-none">Controls</Link>
+            <section className="kiln-console-tab-container flex-container-center space-between">
+                <Link to={`${this.props.match.url}/recent`} className="kiln-console-tab-item light-shade decoration-none">Recent</Link>
+                <Link to={`${this.props.match.url}`} className="kiln-console-tab-item light-shade decoration-none">Overview</Link>
+                <Link to={`${this.props.match.url}/controls`} className="kiln-console-tab-item light-shade decoration-none">Controls</Link>
             </section>
             <Route exact path={`${this.props.match.url}/recent`} render={()=>{
                 return <span className="center-snippet">Recent</span>
