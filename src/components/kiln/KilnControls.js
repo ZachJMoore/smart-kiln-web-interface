@@ -19,7 +19,7 @@ class KilnControls extends Component {
             }
             this.setState({waiting: true},()=>{
 
-                this.props.schedules.map(schedule=>{
+                this.props.schedules.forEach(schedule=>{
                     if (this.state.currentSelection === schedule.id){
                         console.log(schedule.name)
                         kilnAPI.startFiring(this.props.kiln.url, schedule).then(()=>{
