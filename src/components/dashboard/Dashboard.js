@@ -1,34 +1,6 @@
 import React, { Component } from "react";
 import { KilnStatus } from "./KilnStatus";
 
-let placeholder = {
-    metadata: {
-        name: "Uno (PH)"
-    },
-    temp: "82",
-    isFiring: true,
-    firingProgress: 47,
-    currentSchedule: {name: "Basic", default: true},
-}
-let placeholder2 = {
-    metadata: {
-        name: "Duo (PH)"
-    },
-    temp: "1230",
-    isFiring: true,
-    firingProgress: 64,
-    currentSchedule: {name: "Crystalline", default: true},
-}
-let placeholder3 = {
-    metadata: {
-        name: "Spark (PH)"
-    },
-    temp: "72",
-    isFiring: true,
-    firingProgress: 12,
-    currentSchedule: {name: "Cone 6", default: true},
-}
-
 class Dashboard extends Component{
     constructor(props){
         super(props);
@@ -44,9 +16,6 @@ class Dashboard extends Component{
                 <section className="dashboard-status-container column raised-module-light">
                     <span className="flex-container flex-stretch column dashboard-status-container-title">Status</span>
                     {this.props.kilns.map((kiln, index)=><KilnStatus kiln={kiln} key={index} />)}
-                    <KilnStatus kiln={placeholder} />
-                    <KilnStatus kiln={placeholder2} />
-                    <KilnStatus kiln={placeholder3} />
                 </section>
                 <section className="dashboard-kilns-container raised-module-light">
                 </section>
