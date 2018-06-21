@@ -11,7 +11,7 @@ export let KilnStatus = (props)=>{
             </section>
             <section className="flex-container-center flex-stretch">
                 <span className="dashboard-status-text dashboard-status-current-schedule">{props.kiln.currentSchedule ? props.kiln.currentSchedule.name : ""}</span>
-                <div className="dashboard-status-progress-bar" style={{background: `linear-gradient(90deg, var(--main-light-shade) 0%, var(--main-light-shade) ${props.kiln.firingProgress}%, var(--main-dark-shade) ${props.kiln.firingProgress}%, var(--main-dark-shade) 100%)`}}/>
+                <div className="dashboard-status-progress-bar" style={{background: `linear-gradient(90deg, var(--main-second-bg) 0%, var(--main-second-bg) ${props.kiln.firingProgress}%, var(--main-bg) ${props.kiln.firingProgress}%, var(--main-bg) 100%)`}}/>
                 <span className="dashboard-status-text dashboard-status-progress-percent">{props.kiln.firingProgress}%</span>
             </section>
         </Link>

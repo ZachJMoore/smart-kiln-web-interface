@@ -5,7 +5,7 @@
   --main-text: #0c0c0c;
   --main-second-text: #fefefe;
   --main-subtle-text: #a3a3a3;
-  --box-shadow: 0px 0px 12px 0px #0002;
+  --box-shadow: 0px 0px 12px 1px #0003;
 }
 .app {
   min-width: 100%;
@@ -282,10 +282,11 @@ main:empty::before{
 
 .dashboard-status-progress-bar{
   flex: 1;
-  margin: 5px 0;
-  border-radius: 1000px;
+  margin: 2px 0;
+  border-radius: 4px;
   align-self: flex-start;
   height: 16px;
+  border: 2px solid var(--main-second-bg)
 }
 
 .dashboard-kilns-container{
@@ -312,6 +313,46 @@ main:empty::before{
   padding: 2px 8px;
   border: 2px solid var(--main-text);
   color: var(--main-text)
+}
+
+/* kiln controls */
+
+.kiln-controls{
+  align-self: stretch;
+  align-items: flex-start;
+  margin: 10px;
+  padding: 5px;
+  position: relative;
+}
+.kiln-controls-waiting{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background-color: #0003;
+  border-radius: 4px;
+  transition: background-color .5s;
+  pointer-events: none;
+}
+.kiln-controls-waiting[waiting=false]{
+  background-color: #0000;
+}
+.kiln-controls-waiting[waiting=false] .siimple-spinner{
+  display: none;
+}
+.kiln-controls-text{
+  margin: 4px 0;
+}
+.kiln-controls-select{
+  margin: 4px 0;
+}
+.kiln-controls-button{
+  margin: 4px 0;
 }
 
 /* Hour chart */

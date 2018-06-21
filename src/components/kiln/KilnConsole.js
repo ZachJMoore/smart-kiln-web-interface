@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import HourChart from "./HourChart";
 import { Route, Link, withRouter} from "react-router-dom"
+import KilnControls from "./KilnControls";
 
 class KilnConsole extends Component{
     render(){
@@ -22,9 +23,7 @@ class KilnConsole extends Component{
                     {this.props.kiln.tempLog && <HourChart data={this.props.kiln.tempLog}/>}
                 </div>)
             }} />
-            <Route exact path={`${this.props.match.url}/controls`} render={()=>{
-                return <span className="center-snippet">Controls</span>
-            }} />
+            <Route exact path={`${this.props.match.url}/controls`} render={()=><KilnControls kiln={this.props.kiln} schedules={this.props.schedules}/>} />
         </section>
     </div>)
     }

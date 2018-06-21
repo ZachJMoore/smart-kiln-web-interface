@@ -90,14 +90,14 @@ class Console extends Component{
             <Navigation authUser={this.props.authUser} navCheckbox={this.navCheckbox}/>
             <main>
                 <Route exact path="/" render={()=>{
-                    return (<Dashboard kilns={this.state.kilns} />)
+                    return (<Dashboard kilns={this.state.kilns}/>)
                 }}/>
                 <Route exact path="/placeholder" render={()=>{
                     return <span className="half-white center-snippet">Looks like you found a placeholder link</span>
                 }}/>
                 {this.state.kilns.map((kiln, index)=>{
                     return (<Route key={index} path={`/${kiln.metadata.uuid.slice(0,8)}`} render={()=>{
-                        return <KilnConsole kiln={kiln} />
+                        return <KilnConsole kiln={kiln} schedules={this.state.schedules}/>
                     }}/>)
                 })}
             </main>
