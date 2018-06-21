@@ -1,78 +1,16 @@
 /* Dark Colors */
 :root{
-  --main-light-shade: #fcfcfc;
-  --main-light-accent: #eecacb;
-  --main-brand: #cb4340;
-  --main-dark-accent: #762e41;
-  --main-dark-shade: #2e283b;
-
-  --transparent-white: #fff5;
-  --transparent-black: #0005;
-
-  --box-shadow: 2px 2px 8px 1px #0006;
-}
-/* Light Colors */
-/* :root{
-  --main-light-shade: #4e6c70;
-  --main-light-accent: #762e41;
-  --main-brand: #cb4340;
-  --main-dark-accent: #eecacb;
-  --main-dark-shade: #f9fffe;
-
-  --transparent-white:#fff5;
-  --transparent-black:#0005;
-
-  --box-shadow: 2px 2px 8px 1px #0003;
-} */
-.light-shade{
-  color: var(--main-light-shade)
-}
-.light-accent{
-  color: var(--main-light-accent)
-}
-.brand{
-  color: var(--main-brand)
-}
-.dark-accent{
-  color: var(--main-dark-accent)
-}
-.dark-shade{
-  color: var(--main-dark-shade)
-}
-.light-shade-background{
-  background-color: var(--main-light-shade)
-}
-.light-accent-background{
-  background-color: var(--main-light-accent)
-}
-.brand-background{
-  background-color: var(--main-brand)
-}
-.dark-accent-background{
-  background-color: var(--main-dark-accent)
-}
-.dark-shade-background{
-  background-color: var(--main-dark-shade)
-}
-.half-white{
-  color: var(--transparent-white);
-}
-.half-black{
-  color: var(--transparent-black);
-}
-.half-white-background{
-  background-color: var(--transparent-white);
-}
-.half-black-background{
-  background-color: var(--transparent-black);
-}
-.transparent-background{
-  background-color: #0000;
+  --main-bg: #fefefe;
+  --main-second-bg: #0c0c0c;
+  --main-text: #0c0c0c;
+  --main-second-text: #fefefe;
+  --main-subtle-text: #a3a3a3;
+  --box-shadow: 0px 0px 12px 0px #0002;
 }
 .app {
   min-width: 100%;
   min-height: 100vh;
-  background-color: var(--main-dark-shade)
+  background-color: var(--main-bg)
 }
 .app-loading:empty {
   width: 56px;
@@ -81,8 +19,8 @@
   top: calc(50% - 28px);
   left: calc(50% - 28px);
   border-radius: 50%;
-  border: 4px solid var(--main-dark-shade);
-  border-top: 4px solid var(--main-light-shade);
+  border: 4px solid var(--main-second-bg);
+  border-top: 4px solid var(--main-bg);
   animation: 1s app-loading infinite linear;
 }
 @keyframes app-loading {
@@ -95,13 +33,7 @@
 }
 
 .raised-module-light{
-  background-color: var(--main-light-shade);
-  box-shadow: var(--box-shadow);
-  border-radius: 4px;
-}
-
-.raised-module-dark{
-  background-color: var(--main-dark-shade);
+  background-color: var(--main-bg);
   box-shadow: var(--box-shadow);
   border-radius: 4px;
 }
@@ -113,7 +45,7 @@
   top: calc(50% - 10px);
   left: calc(50% - 100px);
   text-align: center;
-  color: var(--transparent-white)
+  color: var(--main-subtle-text)
 }
 
 .decoration-none{
@@ -162,8 +94,8 @@ nav {
   width: calc(300px - 16px);
   padding: 46px 8px 0px 8px;
   height: calc(100vh - 46px);
-  background-color: var(--main-light-shade);
-  box-shadow: inset -5px 0 28px 1.5px var(--transparent-black);
+  background-color: var(--main-bg);
+  box-shadow: inset var(--box-shadow);
   transform: translateX(-300px);
   transition: .3s transform, .3s opacity;
   overflow: hidden;
@@ -185,17 +117,15 @@ nav {
   transition-delay: .15s;
 }
 .nav-button i {
-font-size: 30px;
-transition: .3s
+  font-size: 30px;
+  color: var(--main-second-bg);
+  transition: .3s;
 }
 #navCheckbox{
   opacity: 0;
   position: fixed;
   top: -100px;
   left: -100px;
-}
-#navCheckbox:checked ~ .nav-button i{
-  color: var(--main-dark-shade);
 }
 #navCheckbox:checked ~ nav {
   opacity: 1;
@@ -232,7 +162,7 @@ transition: .3s
   align-items: center;
   text-decoration: none;
   background-color: #0000;
-  color: var(--main-dark-shade);
+  color: var(--main-text);
   border-radius: 4px;
   height: 35px;
   align-self: stretch;
@@ -241,12 +171,12 @@ transition: .3s
   transition: color .2s, background-color .2s
 }
 .nav-link:hover{
-  background-color: var(--main-dark-shade);
-  color: var(--main-light-shade);
+  background-color: var(--main-second-bg);
+  color: var(--main-second-text);
 }
 .nav-links-container:empty::before{
   content: "Looks like you dont have any links";
-  color: var(--transparent-black)
+  color: var(--main-subtle-text)
 }
 
 .nav-log-out-container{
@@ -277,7 +207,7 @@ main:empty::before{
   top: calc(50% - 10px);
   left: calc(50% - 100px);
   text-align: center;
-  color: var(--transparent-white)
+  color: var(--main-subtle-text)
 }
 .view-header{
   display: flex;
@@ -288,7 +218,7 @@ main:empty::before{
   align-items: center;
   height: 46px;
   width: 100%;
-  background-color: var(--main-dark-shade);
+  background-color: var(--main-bg);
   box-shadow: var(--box-shadow);
 }
 .view-body{
@@ -311,15 +241,15 @@ main:empty::before{
 .dashboard-status-container{
   margin: 10px;
   width: calc(100% - 20px);
-  background-color: var(--transparent-white);
+  background-color: var(--main-bg);
 }
 .dashboard-status-container-title{
   padding: 15px 10px;
   font-size: 20px;
-  color: var(--main-light-shade);
+  color: var(--main-text);
 }
 .dashboard-status-item-container{
-  border-top: 2px solid var(--main-dark-shade);
+  border-top: 2px solid var(--main-text);
   padding: 15px 0px;
   transition: transform .2s, box-shadow .2s
 }
@@ -331,7 +261,7 @@ main:empty::before{
 }
 .dashboard-status-text{
   margin: 0 10px;
-  color: var(--main-light-shade)
+  color: var(--main-text)
 }
 .dashboard-status-title{
 
@@ -378,9 +308,10 @@ main:empty::before{
 }
 
 .kiln-console-tab-item{
-  border-radius: 1000px;
+  border-radius: 5px;
   padding: 2px 8px;
-  border: 2px solid var(--main-light-shade)
+  border: 2px solid var(--main-text);
+  color: var(--main-text)
 }
 
 /* Hour chart */
@@ -400,10 +331,7 @@ main:empty::before{
     transform: translateX(300px)
   }
   .nav-button i{
-    color: var(--main-dark-shade)
-  }
-  #navCheckbox:checked ~ .nav-button i{
-    color: var(--main-light-shade);
+    color: var(--main-text)
   }
   #navCheckbox:checked ~ nav {
     opacity: 0;
