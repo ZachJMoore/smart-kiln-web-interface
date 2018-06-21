@@ -12,8 +12,8 @@ class HourChart extends Component{
                     datasets: [{
                         data: data,
                         fill: true,
-                        borderColor: "#f0eeea",
-                        backgroundColor: "#fff5"
+                        borderColor: "#0c0c0c",
+                        backgroundColor: "#0001"
                     }]
                 },
                 options: {
