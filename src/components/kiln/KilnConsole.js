@@ -23,7 +23,7 @@ class KilnConsole extends Component{
                     {this.props.kiln.tempLog && <HourChart data={this.props.kiln.tempLog}/>}
                 </div>)
             }} />
-            <Route exact path={`${this.props.match.url}/controls`} render={()=><KilnControls kiln={this.props.kiln} schedules={this.props.schedules}/>} />
+            <Route exact path={`${this.props.match.url}/controls`} render={()=><KilnControls kiln={this.props.kiln} schedules={this.props.schedules} mergeKilnPackages={this.props.mergeKilnPackages}/>} />
         </section>
     </div>)
     }

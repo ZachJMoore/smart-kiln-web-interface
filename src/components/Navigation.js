@@ -38,6 +38,12 @@ class Navigation extends Component{
                     <Link to="/" className="nav-link">
                         Dashboard
                     </Link>
+                    <Link to="/schedules" className="nav-link">
+                        Schedules
+                    </Link>
+                    <Link to="/add-schedule" className="nav-link">
+                        Add Schedule
+                    </Link>
                 </section>
                 <section className="nav-log-out-container">
                     <button className="siimple-btn half-black" onClick={firebaseAuth.signOutUser} style={{backgroundColor: "#fff0"}}>Log out</button>

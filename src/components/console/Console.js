@@ -5,6 +5,8 @@ import Navigation from "../Navigation"
 import userDB from "../../firebase/firebaseDB";
 import Dashboard from "../dashboard/Dashboard";
 import KilnConsole from "../kiln/KilnConsole";
+import AddSchedule from "../AddSchedule";
+import ViewSchedules from "../ViewSchedules";
 
 class Console extends Component{
     constructor(props){
@@ -89,16 +91,18 @@ class Console extends Component{
             <label htmlFor="navCheckbox" className="nav-mobile-dismiss"></label>
             <Navigation authUser={this.props.authUser} navCheckbox={this.navCheckbox}/>
             <main>
-                <Route exact path="/" render={()=>{
-                    return (<Dashboard kilns={this.state.kilns}/>)
-                }}/>
+                <Route exact path="/" render={()=><Dashboard kilns={this.state.kilns}/>}/>
+                <Route exact path="/schedules" render={()=><ViewSchedules schedules={this.state.schedules}/>} />
+                <Route exact path="/add-schedule" render={()=><AddSchedule schedules={this.state.schedules}/>} />
+
                 <Route exact path="/placeholder" render={()=>{
                     return <span className="half-white center-snippet">Looks like you found a placeholder link</span>
                 }}/>
+
                 {this.state.kilns.map((kiln, index)=>{
-                    return (<Route key={index} path={`/${kiln.metadata.uuid.slice(0,8)}`} render={()=>{
-                        return <KilnConsole kiln={kiln} schedules={this.state.schedules}/>
-                    }}/>)
+                    return (<Route key={index} path={`/${kiln.metadata.uuid.slice(0,8)}`} render={()=>
+                        <KilnConsole kiln={kiln} schedules={this.state.schedules} mergeKilnPackages={this.mergeKilnPackages}/>
+                    }/>)
                 })}
             </main>
         </div>)

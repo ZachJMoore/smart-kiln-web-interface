@@ -32,6 +32,14 @@
   }
 }
 
+.raised-module {
+  box-shadow: 1.5px 1.5px 6px #0003, 0 0 10px 1px #0002;
+  border-radius: 4px;
+  padding: 5px;
+  margin: 4px;
+  background-color: white;
+}
+
 .raised-module-light{
   background-color: var(--main-bg);
   box-shadow: var(--box-shadow);
@@ -210,6 +218,7 @@ main:empty::before{
   color: var(--main-subtle-text)
 }
 .view-header{
+  z-index: 5;
   display: flex;
   position: absolute;
   top: 0;
@@ -360,6 +369,154 @@ main:empty::before{
   align-self: stretch;
 }
 
+/* Add schedule */
+.add-schedule-component{
+
+}
+
+.add-schedule-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: stretch;
+  margin: 10px;
+}
+
+.add-schedule-form-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  padding: 10px 0;
+}
+
+.add-schedule-name-input{
+
+}
+.add-schedule-warning-text{
+  color: var(--main-subtle-text);
+  margin: 4px 0;
+}
+.add-schedule-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  margin: 45px 0;
+  min-height: 60px;
+}
+.schedule-remove-row-button{
+  margin-right: 5px;
+}
+.add-schedule-row-index{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add-schedule-row-index-text{
+  font-size: 22px;
+  font-weight: 600;
+  flex: 1;
+  color: var(--main-subtle-text)
+}
+.add-schedule-row-input-container{
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.add-schedule-row-input-item{
+  margin: 5px;
+}
+.add-schedule-row-move-controls{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.move-row-button{
+  margin: 5px 0
+}
+
+.schedule-button-container{
+  display: flex;
+  flex-direction: column;
+  min-height: 175px;
+  margin-top: 25px;
+}
+.add-ramp-button{
+  margin: 5px 0;
+}
+
+.add-schedule-submit{
+  margin: 25px 0;
+}
+
+/* schedules */
+
+.schedule-dashboard-container{
+  /* padding: 10px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.schedule-dashboard-items{
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.schedule-item{
+  position: relative;
+  flex-grow: 2;
+  margin: 6px;
+  padding: 8px;
+
+}
+
+.schedule-dashboard-table th{
+  text-align: left;
+}
+
+.schedule-item-delete{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.schedule-delete-toggle{
+  align-self: flex-end;
+  min-height: 30px;
+  margin: 15px;
+}
+
+.float{
+  animation: float .35s infinite linear
+}
+
+/* cubic-bezier(.47,.09,.54,.94) */
+
+.float:nth-of-type(even) {
+  animation-delay: -.6s;
+}
+
+@keyframes float {
+  0% {
+    transform: rotate(0)
+  }
+  25% {
+    transform: rotate(-.2deg)
+  }
+  75%{
+    transform: rotate(.2deg)
+  }
+  100%{
+    transform: rotate(0)
+  }
+}
+
 /* Responsive */
 
 @media screen and (min-width: 620px){
@@ -383,6 +540,8 @@ main:empty::before{
     width: 100%;
   }
 }
+
+
 
 @media screen and (max-width: 620px){
   #navCheckbox:checked ~ .nav-mobile-dismiss{

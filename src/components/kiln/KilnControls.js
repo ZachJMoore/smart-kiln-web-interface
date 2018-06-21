@@ -24,6 +24,7 @@ class KilnControls extends Component {
                         console.log(schedule.name)
                         kilnAPI.startFiring(this.props.kiln.url, schedule).then(()=>{
                             console.log("Kiln started")
+                            this.props.mergeKilnPackages(true)
                             this.setState({waiting: false})
                         })
                         return
@@ -38,6 +39,7 @@ class KilnControls extends Component {
             kilnAPI.stopFiring(this.props.kiln.url).then(()=>{
                 this.setState({currentSelection: 0})
                 console.log("kiln stopped")
+                this.props.mergeKilnPackages(true)
                 this.setState({waiting: false})
             })
             
@@ -59,10 +61,10 @@ class KilnControls extends Component {
                         <option value={schedule.id} key={index}>{schedule.name}</option>
                     ))}
                 </select>
-                <button disabled={this.state.waiting} className="siimple-btn kiln-controls-button" onClick={this.handleStart}>
+                <button disabled={this.state.waiting} className="siimple-btn siimple-btn--grey kiln-controls-button" onClick={this.handleStart}>
                     Start kiln
                 </button>
-                <button disabled={this.state.waiting} className="siimple-btn kiln-controls-button" onClick={this.handleStop}>
+                <button disabled={this.state.waiting} className="siimple-btn siimple-btn--grey kiln-controls-button" onClick={this.handleStop}>
                     Stop kiln
                 </button>
             </div>
