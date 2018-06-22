@@ -12,3 +12,6 @@ In the root folder run the following in the terminal
 ```
 
 To setup the raspberry pi, refer to <a href="https://github.com/ZachJMoore/smart-kiln-pi-server">smart-kiln-pi-server</a>
+
+
+Help is welcome on both sides of this project, please feel free to make a pull request!
