@@ -1,4 +1,4 @@
-import { firebaseDB } from "./firebase";
+import { db } from "./firebase";
 import { firebase } from "./firebase";
 
 let authUser = null;
@@ -19,24 +19,24 @@ let objectToArray = (object)=>{
     })
 }
 
-const userDB = {
+const database = {
     setUserName: (data, user = authUser)=>{
         if (user === null) return;
-        firebaseDB.ref(`${userPath}/name`).set(data)
+        db.ref(`${userPath}/name`).set(data)
     },
     getUserName: (callback)=>{
-        firebase.database().ref(`${userPath}/name`).once("value", (name)=>{
+        db.ref(`${userPath}/name`).once("value", (name)=>{
             callback(name.val())
         })
     },
     getKilns: (callback)=>{
-        firebase.database().ref(`${userPath}/kilns`).on("value", (kilns)=>{
+        db.ref(`${userPath}/kilns`).on("value", (kilns)=>{
             let array = objectToArray(kilns.val())
             callback(array)
         })
     },
     getSchedules: (callback)=>{
-        firebase.database().ref(`${userPath}/schedules`).on("value", (schedules)=>{
+        db.ref(`${userPath}/schedules`).on("value", (schedules)=>{
             let array = objectToArray(schedules.val())
             callback(array)
         })
@@ -45,8 +45,8 @@ const userDB = {
         schedule.ramps = JSON.stringify(schedule.ramps)
         let placeholder;
         data !== undefined ? placeholder = data : placeholder = schedule
-        firebase.database().ref(`${userPath}/schedules/${schedule.id}`).set(placeholder)
+        db.ref(`${userPath}/schedules/${schedule.id}`).set(placeholder)
     }
 }
 
-export default userDB;
+export default database;

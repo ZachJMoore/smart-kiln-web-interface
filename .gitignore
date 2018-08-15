@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/src/firebase/firebase.js
+src/lib/firebase/firebase.js
 
 # testing
 /coverage
