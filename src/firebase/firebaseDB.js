@@ -1,4 +1,4 @@
-import { firebaseDB } from "./firebase";
+import { db } from "./firebase";
 import { firebase } from "./firebase";
 
 let authUser = null;
@@ -22,7 +22,7 @@ let objectToArray = (object)=>{
 const userDB = {
     setUserName: (data, user = authUser)=>{
         if (user === null) return;
-        firebaseDB.ref(`${userPath}/name`).set(data)
+        db.ref(`${userPath}/name`).set(data)
     },
     getUserName: (callback)=>{
         firebase.database().ref(`${userPath}/name`).once("value", (name)=>{
