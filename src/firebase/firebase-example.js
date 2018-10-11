@@ -9,11 +9,11 @@ let config = {
 };
 firebase.initializeApp(config);
 
-const firebaseAuth = firebase.auth()
-const firebaseDB = firebase.database()
+const auth = firebase.auth()
+const db = firebase.database()
 
 export {
     firebase,
-    firebaseAuth,
-    firebaseDB
+    auth,
+    db
 } 
