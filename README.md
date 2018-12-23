@@ -1,3 +1,5 @@
+This repository is now archived and is no longer maintained. This project has been superseded by https://github.com/ZachJMoore/smart-kiln-backend
+
 # Smart Kiln
 This is the web interface for the "Smart Kiln" project.
 
